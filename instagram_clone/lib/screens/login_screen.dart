@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:instagram_clone/utils/colors.dart';
@@ -24,7 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-
         child: Container(
           padding: EdgeInsets.symmetric(horizontal: 34),
           width: double.infinity,
@@ -32,9 +29,9 @@ class _LoginScreenState extends State<LoginScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Flexible(child: Container(),flex: 1,),
-              //svg image
+              // svg image
               SvgPicture.asset(
-                'ic_instagram.svg',
+                "assets/ic_instagram.svg",
                 colorFilter: ColorFilter.mode(primaryColor, BlendMode.srcIn),
                 height: 64,
               ),
@@ -46,8 +43,7 @@ class _LoginScreenState extends State<LoginScreen> {
               TextFieldInput(textEditingController: _passwordController, hintText: "Enter The Password", textInputType: TextInputType.text,isPass: true,),
               const SizedBox(height: 24,),
               //text button
-              GestureDetector(
-                onTap: (){},
+              InkWell(
                 child: Container(
                   child: const Text("Login"),
                   width: double.infinity,
@@ -71,9 +67,12 @@ class _LoginScreenState extends State<LoginScreen> {
                     child:const Text("Don't Have Account? "),
                     padding: EdgeInsets.symmetric(vertical: 8),
                   ),
-                  Container(
-                    child:const Text("Sing up",style: TextStyle(fontWeight: FontWeight.bold),),
-                    padding: EdgeInsets.symmetric(vertical: 8),
+                  GestureDetector(
+                    onTap: (){},
+                    child: Container(
+                      child:const Text("Sing up",style: TextStyle(fontWeight: FontWeight.bold),),
+                      padding: EdgeInsets.symmetric(vertical: 8),
+                    ),
                   ),
                 ],
               ),
